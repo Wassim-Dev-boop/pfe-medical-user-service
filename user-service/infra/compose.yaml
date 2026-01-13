@@ -1,0 +1,16 @@
+services:
+  mysql-userdb:
+    image: mysql:8
+    container_name: mysql-userdb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: userdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - userdb_data:/var/lib/mysql
+
+volumes:
+  userdb_data:
+  
